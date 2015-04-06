@@ -1,0 +1,6 @@
+%ul
+-@events.each do |event|
+  %li.event
+    = link_to event.title, event_path(event)
+    = event.details
+

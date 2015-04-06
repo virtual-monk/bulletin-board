@@ -1,0 +1,30 @@
+As a user
+I want to visit this site
+So I can see what events are around me today
+Acceptance criteria
+
+- visit root and see events for the evening
+
+
++++++++++++++++++++++++++
+As a user
+I want to be able to add an event
+So the people in the area can know the deets
+Acceptance criteria
+
+-must be signed in
++++++++++++++++++++++++++
+As a user
+I want to be able to edit an event
+So that the peeps can know that the time/place have changed
+-must be signed in
+-must be original poster
++++++++++++++++++++++++++
+As a user
+I want to be able to choose the type of event
+So I dont have to see the comedy shows when I want to see a live band
+
++++++++++++++++++++++++++
++++++++++++++++++++++++++
++++++++++++++++++++++++++
++++++++++++++++++++++++++

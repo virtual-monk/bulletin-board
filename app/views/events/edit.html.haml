@@ -1,0 +1,41 @@
+- if @event.errors.any?
+  #error_explanation
+    %h2
+      = pluralize(@event.errors.count, "error")
+      prohibited this event from being saved:
+    %ul
+      - @event.errors.full_messages.each do |message|
+        %li= message
+= form_for @event do |f|
+  .new_event
+    = f.label :title
+    = f.text_area :title
+  .new_event
+    = f.label :time
+    = f.time_select :time, {ampm: true}
+  .new_event
+    = f.label :date
+    = f.date_select :date
+  .new_event
+    = f.label :details
+    = f.text_area :details
+  .new_event
+    = f.label :address
+    = f.text_area :address
+  .new_event
+    = f.label :address_2
+    = f.text_area :address_2
+  .new_event
+    = f.label :city
+    = f.text_area :city
+  .new_event
+    = f.label :state
+    = f.text_area :state
+  .new_event
+    = f.label :zip_code
+    = f.text_area :zip_code
+  .new_event
+    = f.label :category_id
+    = f.select :category_id, Category.all.collect { |a| [a.category, a.id] }
+    .post
+      = f.submit "Edit event"

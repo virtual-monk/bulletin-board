@@ -1,0 +1,21 @@
+%h1= @event.title
+- if @event.owner?(current_user)
+  %div
+  = link_to "Edit event", edit_event_path(@event)
+  %div
+  = link_to "Delete event", event_path(@event), method: :delete
+
+%div
+  Details: #{@event.details}
+.event_when
+  When:#{@event.start_time}-#{@event.end_time} #{@event.date}
+.event_where
+  %div
+    Where: #{@event.address}
+  %div
+    = @event.address_2
+  %div
+    = @event.city
+    , #{@event.state}
+  %div
+    = @event.zip_code
