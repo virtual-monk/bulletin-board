@@ -4,7 +4,7 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     :css
       html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-    %script{:src => "https://maps.googleapis.com/maps/api/js?key=" = ENV['S3_SECRET'] , :type => "text/javascript"}
+    %script{:src => "https://maps.googleapis.com/maps/api/js?key= #{ ENV['S3_SECRET']} ", :type => "text/javascript"}
       :cdata
     :javascript
       function initialize() {

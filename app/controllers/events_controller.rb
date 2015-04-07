@@ -7,9 +7,6 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    @event.category_id = 3
-
-    ## ^^^^^dont forget to take this out ^^^^^^
 
     if @event.save
       flash[:notice] = "Event Saved"
@@ -56,7 +53,7 @@ class EventsController < ApplicationController
 
   protected
   def event_params
-    params.require(:event).permit(:title, :start_time, :end_time, :date, :details, :category_id,
-      :address, :address_2, :city, :state, :zip_code)
+    params.require(:event).permit(:title, :start_time, :end_time, :date,
+      :details, :category_id, :address, :address_2, :city, :state, :zip_code)
   end
 end

@@ -18,6 +18,10 @@
       %section.top-bar-section
         %ul.right
           - if current_user
+            %li
+              %a.button.large{"data-reveal-id" => "myCform", :href => "#"} Add Event
+              #myCform.reveal-modal.small{"data-reveal" => ""}/
+              %a.close-reveal-modal ×
             %li= link_to 'Add Event', new_event_path
             %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
           - else
