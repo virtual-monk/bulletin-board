@@ -1,5 +1,14 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+
+  def show
+    @event = Event.find(params[:id])
+  end
+
+  def index
+    @events = Event.page(params[:page]).order(:title)
+  end
+
   def new
     @event = Event.new
   end
@@ -19,14 +28,6 @@ class EventsController < ApplicationController
 
   def edit
     @event = current_user.events.find(params[:id])
-  end
-
-  def show
-    @event = Event.find(params[:id])
-  end
-
-  def index
-    @events = Event.page(params[:page]).order(:title)
   end
 
   def update

@@ -1,0 +1,14 @@
+
+%h1
+  = "#{@date.strftime("%B")} #{@date.year}"
+= link_to calendar_path(date: @date - 1.month), class: "button" do
+  %i.glyphicon.glyphicon-backward
+= link_to calendar_path(date: @date + 1.month), class: "button" do
+  %i.glyphicon.glyphicon-forward
+
+= calendar @date do |date|
+  = date.day
+  %ul
+    -@events_by_date.each do |event|
+      -if event.date == date
+        %li= link_to event.title, event

@@ -1,30 +1,63 @@
+- if @event.errors.any?
+  #error_explanation
+    %h2
+      = pluralize(@event.errors.count, "error")
+      prohibited this event from being saved:
+    %ul
+      - @event.errors.full_messages.each do |message|
+        %li= message
 = form_for @event do |f|
-  .new_event
-    = f.text_area :title, placeholder: "Title"
-    .form
-  .new_event
-    = f.label :start_time
-    = f.time_field :start_time
-  .new_event
-    = f.label :end_time
-    = f.time_field :end_time
-  .new_event
-    = f.label :date
-    = f.date_field :date
-  .new_event
-    = f.text_area :details, placeholder: "Details"
-  .new_event
-    = f.text_area :address, placeholder: "Address"
-  .new_event
-    = f.text_area :address_2, placeholder: "Address 2"
-  .new_event
-    = f.text_area :city, placeholder: "City"
-  .new_event
-    = f.text_area :state, placeholder: "State"
-  .new_event
-    = f.text_area :zip_code, placeholder: "Zip Code"
-  .new_event
-    = f.label :category_id
-    = f.select :category_id, Category.all.collect { |a| [a.category, a.id] }
-    .post
-      = f.submit "Add event"
+  .row
+    .large-7.columns
+      .small-6.columns
+        .new_event
+          = f.text_field :title, placeholder: "Title"
+          .form
+  .row
+    .large-7.columns
+      .small-3.columns
+        .new_event
+          = f.label :start_time
+          = f.time_field :start_time
+      .small-3.columns
+        .new_event
+          = f.label :end_time
+          = f.time_field :end_time
+      .small-4.columns
+        .new_event
+          = f.label :date
+          = f.date_field :date
+  .row
+    .large-7.columns
+      .large-4.columns
+        .new_event
+          = f.label :category_id
+          = f.select :category_id, Category.all.collect { |a| [a.category, a.id] }
+  .row
+    .large-7.columns
+      .small-6.columns
+        .new_event
+        = f.text_field :address, placeholder: "Address"
+      .small-6.columns
+        .new_event
+        = f.text_field :address_2, placeholder: "Address 2"
+  .row
+    .large-7.columns
+      .small-4.columns
+        .new_event
+          = f.text_field :city, placeholder: "City"
+      .small-4.columns
+        .new_event
+          = f.select :state, options_for_select(us_states)
+      .small-4.columns
+        .new_event
+          = f.text_field :zip_code, placeholder: "Zip Code"
+  .row
+    .large-7.columns
+      .large-12.columns
+        = f.text_area :details, placeholder: "Details"
+  .row
+    .large-7.columns
+      .large-3.columns
+        .post
+          = f.submit "Add event"

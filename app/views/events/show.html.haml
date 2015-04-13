@@ -1,22 +1,42 @@
-%h1= @event.title
-= @event.category.category
-- if @event.owner?(current_user)
-  %div
-  = link_to "Edit event", edit_event_path(@event)
-  %div
-  = link_to "Delete event", event_path(@event), method: :delete
-
-%div
-  Details: #{@event.details}
-.event_when
-  When:#{@event.start_time}-#{@event.end_time} #{@event.date}
-.event_where
-  %div
-    Where: #{@event.address}
-  %div
-    = @event.address_2
-  %div
-    = @event.city
-    , #{@event.state}
-  %div
-    = @event.zip_code
+.row
+  .columns
+    .rows
+      .large-4.columns
+        #mini_map
+          Awesome Mini Map
+      .large-8.columns
+        .row
+          .medium-8.columns
+            %h3= @event.title
+            = @event.category.category
+          .medium-4.columns
+            - if @event.owner?(current_user)
+              %div
+              = link_to "Edit event", edit_event_path(@event)
+              %div
+              = link_to "Delete event", event_path(@event), method: :delete
+        .row
+          .medium-8.columns
+            %span
+              .event_date
+                #{@event.date}
+            .event_time
+              = @event.start_time.strftime("%I:%M%p") + " - " + @event.end_time.strftime("%I:%M%p")
+        .row
+          .large-10.columns
+            %div
+              Details: #{@event.details}
+.row
+  .columns
+    .rows
+      .large-4.columns
+        .event_where
+          %div
+            Where: #{@event.address}
+          %div
+            = @event.address_2
+          %div
+            = @event.city
+            , #{@event.state}
+          %div
+            = @event.zip_code
