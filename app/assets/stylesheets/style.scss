@@ -1,7 +1,7 @@
 body {
   background-image:
   url("http://dfwpartyplanners.com/wp-content/uploads/2014/09/party.jpg");
-  margin: 0px;
+  margin: 0;
 }
 .calendar {
   td {
@@ -13,8 +13,8 @@ body {
 }
 .scrollable {
   height: 80px;
-  max-width: 140px;
   max-height: 80px;
+  max-width: 140px;
   overflow-y: auto;
   width: 140px;
 }
@@ -23,11 +23,11 @@ body {
   padding-top: 10px;
 }
 #map {
-  background-color:#000;
-  display:block;
-  height:600px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:10px;
-  width:100%;
+  background-color: #000000;
+  display: block;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 100%;
 }
