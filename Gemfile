@@ -13,6 +13,7 @@ gem 'foundation-rails'
 gem "haml-rails", "~> 0.9"
 gem 'kaminari'
 gem 'shoulda-matchers'
+gem 'geocoder'
 
 group :development, :test do
   gem 'coveralls', require: false

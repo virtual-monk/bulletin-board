@@ -27,11 +27,11 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = current_user.events.find(params[:id])
+    access_to_event?(current_user)
   end
 
   def update
-    @event = current_user.events.find(params[:id])
+    access_to_event?(current_user)
 
     if @event.update(event_params)
       flash[:notice] = "Event Information Updated"
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
+    access_to_event?(current_user)
     if @event.destroy
       flash[:notice] = "Event Successfully Deleted"
       redirect_to calendar_path
@@ -52,9 +52,17 @@ class EventsController < ApplicationController
     end
   end
 
+  def access_to_event?(current_user)
+    if current_user.admin
+      @event = Event.find(params[:id])
+    else
+      @event = current_user.events.find(params[:id])
+    end
+  end
+
   protected
   def event_params
     params.require(:event).permit(:title, :start_time, :end_time, :date,
-      :details, :category_id, :address, :address_2, :city, :state, :zip_code)
+      :details, :category_id, :address, :address_2, :city, :state, :zip_code, :longitude, :latitude)
   end
 end
