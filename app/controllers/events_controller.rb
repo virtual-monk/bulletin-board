@@ -35,7 +35,7 @@ class EventsController < ApplicationController
 
     if @event.update(event_params)
       flash[:notice] = "Event Information Updated"
-      redirect_to event_path(@event)
+      redirect_to event_path
     else
       flash[:notice] = "Invalid Event Submission"
       render :edit
@@ -43,13 +43,13 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = current_user.events.find(params[:id])
+    @event = Event.find(params[:id])
     if @event.destroy
       flash[:notice] = "Event Successfully Deleted"
+      redirect_to calendar_path
     else
       flash[:notice] = "Event was not deleted"
     end
-    redirect_to events_path
   end
 
   protected

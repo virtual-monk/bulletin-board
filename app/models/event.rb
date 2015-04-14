@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
   validates :state, presence: true
   validates :zip_code, presence: true
 
-  def owner?(logged_in_user)
-    user == logged_in_user
+  def owner_or_admin?(logged_in_user)
+    user == logged_in_user || logged_in_user.admin
   end
 end

@@ -10,7 +10,7 @@
             %h3= @event.title
             = @event.category.category
           .medium-4.columns
-            - if @event.owner?(current_user)
+            - if @event.owner_or_admin?(current_user)
               %div
               = link_to "Edit event", edit_event_path(@event)
               %div
