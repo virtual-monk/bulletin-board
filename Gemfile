@@ -15,6 +15,7 @@ gem 'kaminari'
 gem 'shoulda-matchers'
 
 group :development, :test do
+  gem 'coveralls', require: false
   gem "factory_girl"
   gem 'dotenv-rails'
   gem 'pry-rails'

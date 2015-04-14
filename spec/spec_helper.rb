@@ -13,6 +13,8 @@
 # it.
 #
 # The `.rspec` file also contains a few flags that are not defaults but that
+require 'coveralls'
+Coveralls.wear!('rails')
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
