@@ -1,38 +1,33 @@
 body {
-  margin:0px;
-  background-color: black;
   background-image:
-  url("");
+  url("http://dfwpartyplanners.com/wp-content/uploads/2014/09/party.jpg");
+  margin: 0px;
 }
-
 .calendar {
   td {
-    width:150px;
-    max-width: 150px;
-    height:100px;
+    height: 100px;
     max-height: 100px;
+    max-width: 150px;
+    width: 150px;
   }
 }
-
-.scrollable{
-  width:140px;
+.scrollable {
+  height: 80px;
   max-width: 140px;
-  height:80px;
   max-height: 80px;
   overflow-y: auto;
-  color: blue;
+  width: 140px;
 }
-#event_show{
-  padding-top: 10px;
+#event_show {
   margin-top: 50px;
-  opacity: 0.5;
+  padding-top: 10px;
 }
 #map {
+  background-color:#000;
   display:block;
+  height:600px;
   margin-left:auto;
   margin-right:auto;
   margin-top:10px;
-  height:600px;
   width:100%;
-  background-color:#000;
 }
