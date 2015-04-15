@@ -16,10 +16,6 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Dotenv::Railtie.load
-
-SECRET_KEY = ENV['S3_SECRET']
-
 module BulletienBoard
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/lib)
