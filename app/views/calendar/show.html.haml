@@ -10,8 +10,8 @@
       .medium-4.columns
         = link_to calendar_path(date: @date + 1.month), class: "button" do
           %i.glyphicon.glyphicon-forward
-.column
-  .columns.center
+.row.table-center
+  .large-12.columns
     = calendar @date do |date|
       = date.day
       %div.scrollable

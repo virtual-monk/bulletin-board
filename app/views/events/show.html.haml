@@ -1,42 +1,44 @@
 .row
   .columns
-    .rows
-      .large-4.columns
-        #mini_map
-          Awesome Mini Map
-      .large-8.columns
-        .row
-          .medium-8.columns
-            %h3= @event.title
-            = @event.category.category
-          .medium-4.columns
-            - if @event.owner_or_admin?(current_user)
+    .panel#event_show
+      .row
+        .large-4.columns
+          #mini_map
+            = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"
+        .large-8.columns
+          .row
+            .medium-8.columns
+              %h3= @event.title
+              = @event.category.category
+            .medium-4.columns
+              - if current_user
+                - if @event.owner_or_admin?(current_user)
+                  %div
+                  = link_to "Edit event", edit_event_path(@event)
+                  %div
+                  = link_to "Delete event", event_path(@event), method: :delete
+          .row
+            .medium-8.columns
+              %span
+                .event_date
+                  #{@event.date}
+              .event_time
+                = @event.start_time.strftime("%I:%M%p") + " - " + @event.end_time.strftime("%I:%M%p")
+          .row
+            .large-10.columns
               %div
-              = link_to "Edit event", edit_event_path(@event)
-              %div
-              = link_to "Delete event", event_path(@event), method: :delete
-        .row
-          .medium-8.columns
-            %span
-              .event_date
-                #{@event.date}
-            .event_time
-              = @event.start_time.strftime("%I:%M%p") + " - " + @event.end_time.strftime("%I:%M%p")
-        .row
-          .large-10.columns
-            %div
-              Details: #{@event.details}
-.row
-  .columns
-    .rows
-      .large-4.columns
-        .event_where
-          %div
-            Where: #{@event.address}
-          %div
-            = @event.address_2
-          %div
-            = @event.city
-            , #{@event.state}
-          %div
-            = @event.zip_code
+                Details: #{@event.details}
+      .row
+        .columns
+          .rows
+            .large-4.columns
+              .event_where
+                %div
+                  Where: #{@event.address}
+                %div
+                  = @event.address_2
+                %div
+                  = @event.city
+                  , #{@event.state}
+                %div
+                  = @event.zip_code
