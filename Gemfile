@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.1.5"
 
 gem 'devise'
 gem 'rails', '4.2.1'
@@ -13,10 +14,12 @@ gem 'foundation-rails'
 gem "haml-rails", "~> 0.9"
 gem 'kaminari'
 gem 'shoulda-matchers'
+gem 'geocoder'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
+  gem 'coveralls', require: false
   gem "factory_girl"
-  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
