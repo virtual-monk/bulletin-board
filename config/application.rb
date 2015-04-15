@@ -18,6 +18,7 @@ Bundler.require(*Rails.groups)
 
 module BulletienBoard
   class Application < Rails::Application
+    config.serve_static_assets = true
     config.autoload_paths += %W(#{config.root}/lib)
     config.active_record.raise_in_transactional_callbacks = true
   end
