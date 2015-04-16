@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.page(params[:page]).order(:title)
+    @events = Event.page(params[:page]).order(likes_count: :desc)
   end
 
   def new

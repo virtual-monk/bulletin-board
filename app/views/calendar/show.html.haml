@@ -1,21 +1,24 @@
-.row
+.column
   .medium-12.columns.text-center
     .row
-      .medium-4.columns
-        = link_to calendar_path(date: @date - 1.month), class: "button" do
-          %i.glyphicon.glyphicon-backward
-      .medium-4.columns
-        %h1
-          = "#{@date.strftime("%B")} #{@date.year}"
-      .medium-4.columns
-        = link_to calendar_path(date: @date + 1.month), class: "button" do
-          %i.glyphicon.glyphicon-forward
-.row.table-center
-  .large-12.columns
-    = calendar @date do |date|
-      = date.day
-      %div.scrollable
-        %ul
-        -@events_by_date.each do |event|
-          -if event.date == date
-            %li= link_to event.title, event
+      .small-12.comlumns.text-center.small-offset-3.column
+        .small-1.columns
+          = link_to calendar_path(date: @date - 1.month), class: "button tiny right" do
+            %i
+        .small-4.columns
+          %h2
+            = "#{@date.strftime("%B")} #{@date.year}"
+        .small-1.columns
+          = link_to calendar_path(date: @date + 1.month), class: "button tiny left" do
+            %i
+        .small-offset-3.column
+    .medium-12.columns.medium-offset-1.column
+      .medium-8.columns
+        = calendar @date do |date|
+          = date.day
+          %div.scrollable
+            %ul
+            -@events_by_date.each do |event|
+              -if event.date == date
+                %li= link_to event.title, event
+      .medium-2.columns

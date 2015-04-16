@@ -1,6 +1,6 @@
 .row
   .columns
-    .panel#event_show
+    .panel.white-text#dark-panel
       .row
         .large-4.columns
           #mini_map
@@ -8,10 +8,17 @@
         .large-8.columns
           .row
             .medium-8.columns
-              %h3= @event.title
+              %h3
+                .white-text
+                  = @event.title
               = @event.category.category
             .medium-4.columns
+              - if @event.likes.count == 1
+                = "#{@event.likes.count} person likes this event"
+              - else
+                = "#{@event.likes.count} people like this event"
               - if current_user
+                = link_to "Like event", event_likes_path(@event), method: :post
                 - if @event.owner_or_admin?(current_user)
                   %div
                   = link_to "Edit event", edit_event_path(@event)
@@ -34,7 +41,7 @@
             .large-4.columns
               .event_where
                 %div
-                  Where: #{@event.address}
+                  #{@event.address}
                 %div
                   = @event.address_2
                 %div

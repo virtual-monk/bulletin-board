@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414175450) do
+ActiveRecord::Schema.define(version: 20150416182815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,22 +23,28 @@ ActiveRecord::Schema.define(version: 20150414175450) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.string   "details",     null: false
-    t.integer  "user_id",     null: false
-    t.integer  "category_id", null: false
-    t.string   "address",     null: false
+    t.string   "title",                   null: false
+    t.string   "details",                 null: false
+    t.integer  "user_id",                 null: false
+    t.integer  "category_id",             null: false
+    t.string   "address",                 null: false
     t.string   "address_2"
-    t.string   "city",        null: false
-    t.string   "state",       null: false
-    t.string   "zip_code",    null: false
+    t.string   "city",                    null: false
+    t.string   "state",                   null: false
+    t.string   "zip_code",                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "date",        null: false
-    t.time     "start_time",  null: false
-    t.time     "end_time",    null: false
+    t.date     "date",                    null: false
+    t.time     "start_time",              null: false
+    t.time     "end_time",                null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "likes_count", default: 0
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id",  null: false
+    t.integer "event_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
