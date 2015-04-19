@@ -1,7 +1,9 @@
 class Event < ActiveRecord::Base
+  mount_uploader :event_photo, EventPhotoUploader
   belongs_to :user
   belongs_to :category
   has_many :likes
+  has_many :users, through: :likes
 
   geocoded_by :full_street_address
 

@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-
+    # @event.event_photo = params[:file]
     if @event.save
       flash[:notice] = "Event Saved"
       redirect_to event_path(@event)
@@ -52,6 +52,7 @@ class EventsController < ApplicationController
     end
   end
 
+
   def access_to_event?(current_user)
     if current_user.admin
       @event = Event.find(params[:id])
@@ -64,6 +65,6 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :start_time, :end_time, :date,
       :details, :category_id, :address, :address_2, :city, :state, :zip_code,
-      :longitude, :latitude)
+      :longitude, :latitude, :event_photo)
   end
 end
