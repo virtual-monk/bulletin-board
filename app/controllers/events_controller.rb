@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.page(params[:page]).order(likes_count: :desc)
+    @events = Event.page(params[:page]).order(attends_count: :desc)
   end
 
   def new
@@ -51,7 +51,6 @@ class EventsController < ApplicationController
       flash[:notice] = "Event was not deleted"
     end
   end
-
 
   def access_to_event?(current_user)
     if current_user.admin

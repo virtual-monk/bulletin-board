@@ -3,7 +3,7 @@
     .panel.white-text#dark-panel
       .row
         .large-4.columns
-          -binding.pry
+          / -binding.pry
           = image_tag @event.event_photo
         .large-8.columns
           .row
@@ -42,12 +42,19 @@
         .columns
           .rows
             .large-4.columns
-              - if @event.likes.count == 1
-                = "#{@event.likes.count} person likes this event"
-              - else
-                = "#{@event.likes.count} people like this event"
+              %div
+                - if @event.attends_count == 1
+                  = "#{@event.attends_count} person is attending this event"
+                - else
+                  = "#{@event.attends_count} people are attending this event"
+              %div
+                - if @event.maybe_attends_count == 1
+                  = "#{@event.maybe_attends_count} person maybe attending this event"
+                - else
+                  = "#{@event.maybe_attends_count} people might be going to this event"
               - if current_user
-                = link_to "Like event", event_likes_path(@event), method: :post
+                = link_to "Attending", event_attend_index_path(@event), method: :post
+                = link_to "Maybe Attending", event_maybe_attend_index_path(@event), method: :post
                 - if @event.owner_or_admin?(current_user)
                   %div
                   = link_to "Edit event", edit_event_path(@event)

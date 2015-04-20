@@ -15,12 +15,17 @@
                       = event.title
                   = event.category.category
                 .medium-4.columns
-                  - if event.likes_count == 1
-                    = "#{event.likes_count} person likes this event"
-                  - else
-                    = "#{event.likes_count} people like this event"
+                  %div
+                    - if event.attends_count == 1
+                      = "#{event.attends_count} person is attending this event"
+                    - else
+                      = "#{event.attends_count} people are attending this event"
+                  %div
+                    - if event.maybe_attends_count == 1
+                      = "#{event.maybe_attends_count} person maybe attending this event"
+                    - else
+                      = "#{event.maybe_attends_count} people might be going to this event"
                   - if current_user
-                    = link_to "Like event", event_likes_path(event), method: :post
                     - if event.owner_or_admin?(current_user)
                       %div
                       = link_to "Edit event", edit_event_path(event)
