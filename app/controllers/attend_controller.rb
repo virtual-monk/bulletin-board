@@ -11,8 +11,4 @@ class AttendController < ApplicationController
 
     redirect_to event_path(@attend.event)
   end
-
-  def destroy
-
-  end
 end

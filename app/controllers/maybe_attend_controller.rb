@@ -11,8 +11,4 @@ class MaybeAttendController < ApplicationController
 
     redirect_to event_path(@maybe_attend.event)
   end
-
-  def destroy
-
-  end
 end
