@@ -8,6 +8,7 @@
         %li= message
 .panel#dark-panel
   = form_for @event do |f|
+  / , html: {multipart: :true}
     .row
       .large-7.columns
         .small-6.columns
@@ -57,7 +58,7 @@
       .large-7.columns
         .large-12.columns
           = f.text_area :details, placeholder: "Details"
-          = f.file_field :event_photo, type: :file, multiple: true
+          = f.file_field :event_photo, type: :file
     .row
       .large-7.columns
         .large-3.columns

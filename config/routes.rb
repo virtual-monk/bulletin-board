@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :events do
     resources :categories
-    resources :likes
+    resources :attend
+    resources :maybe_attend
   end
 end

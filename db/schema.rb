@@ -16,6 +16,11 @@ ActiveRecord::Schema.define(version: 20150417173137) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "attends", force: :cascade do |t|
+    t.integer "user_id",  null: false
+    t.integer "event_id", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "category",   null: false
     t.datetime "created_at"
@@ -23,27 +28,28 @@ ActiveRecord::Schema.define(version: 20150417173137) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "title",                   null: false
-    t.string   "details",                 null: false
-    t.integer  "user_id",                 null: false
-    t.integer  "category_id",             null: false
-    t.string   "address",                 null: false
+    t.string   "title",                           null: false
+    t.string   "details",                         null: false
+    t.integer  "user_id",                         null: false
+    t.integer  "category_id",                     null: false
+    t.string   "address",                         null: false
     t.string   "address_2"
-    t.string   "city",                    null: false
-    t.string   "state",                   null: false
-    t.string   "zip_code",                null: false
+    t.string   "city",                            null: false
+    t.string   "state",                           null: false
+    t.string   "zip_code",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "date",                    null: false
-    t.time     "start_time",              null: false
-    t.time     "end_time",                null: false
+    t.date     "date",                            null: false
+    t.time     "start_time",                      null: false
+    t.time     "end_time",                        null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "likes_count", default: 0
-    t.string   "event_photo",                          array: true
+    t.integer  "attends_count",       default: 0
+    t.integer  "maybe_attends_count", default: 0
+    t.string   "event_photo"
   end
 
-  create_table "likes", force: :cascade do |t|
+  create_table "maybe_attends", force: :cascade do |t|
     t.integer "user_id",  null: false
     t.integer "event_id", null: false
   end
