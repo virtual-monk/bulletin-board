@@ -1,16 +1,14 @@
 !!!
 %html{:lang => "en"}
   %head
-    %meta{:content => "initial-scale=1,maximum-scale=1,user-scalable=no", :name => "viewport"}/
-    %script{:src => "https://api.tiles.mapbox.com/mapbox.js/v2.1.7/mapbox.js"}
-    %link{:href => "https://api.tiles.mapbox.com/mapbox.js/v2.1.7/mapbox.css", :rel => "stylesheet"}/
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:content => "initial-scale=1,maximum-scale=1,user-scalable=no", :name => "viewport"}/
     %title= "Wassup?"
+    %link{:href => "https://api.tiles.mapbox.com/mapbox.js/v2.1.8/mapbox.css", :rel => "stylesheet"}
+    %link{:href => "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css", :rel => "stylesheet"}
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/modernizr"
-    = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
   %nav.top-bar
     %ul.title-area
@@ -21,7 +19,7 @@
       %ul.center
         %li= link_to 'featured', events_path
         %li= link_to 'calendar', calendar_path
-        %li= link_to 'map', maps_path
+        %li= link_to 'map', events_path("events#map")
     %section.top-bar-section
       %ul.right
         - if current_user
@@ -39,3 +37,7 @@
   %p.alert= alert
   %body
     = yield
+
+    %script{:src => "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"}
+    %script{:src => "https://api.tiles.mapbox.com/mapbox.js/v2.1.8/mapbox.js"}
+    = javascript_include_tag "application"

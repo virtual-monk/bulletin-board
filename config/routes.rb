@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root to: "events#index"
-
-  resources :maps, only: :index
+  root to: "events#map"
+  # get '/event/maps'
+  get '/profile', to:'profile#show'
+  resources :profile
   resource :calendar, only: [:show], controller: :calendar
   devise_for :users
   resources :events do
