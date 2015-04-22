@@ -1,12 +1,16 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :map]
 
   def show
     @event = Event.find(params[:id])
   end
 
   def index
-    @events = Event.page(params[:page]).order(likes_count: :desc)
+    @events = Event.page(params[:page]).order(attends_count: :desc)
+    respond_to do |format|
+      format.json {render json: @events}
+      format.html {@events}
+    end
   end
 
   def new
@@ -52,13 +56,15 @@ class EventsController < ApplicationController
     end
   end
 
-
   def access_to_event?(current_user)
     if current_user.admin
       @event = Event.find(params[:id])
     else
       @event = current_user.events.find(params[:id])
     end
+  end
+
+  def map
   end
 
   protected
