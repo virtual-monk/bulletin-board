@@ -4,7 +4,7 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v4/virtual-monk.ln2l3lfc/{z}/{x}/{y}.p
     attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
 }).addTo(map);
 
-$.get( "/events.json", function( data ) {
+$.get( '/events.json', function( data ) {
       var coordsArray = [];
       for (i=0; i<data.length; i++) {
         var coordinatesArray =  [data[i].latitude, data[i].longitude];
