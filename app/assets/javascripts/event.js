@@ -10,8 +10,8 @@ $.get( '/events.json', function( data ) {
         var coordinatesArray =  [data[i].latitude, data[i].longitude];
         coordsArray.push(coordinatesArray);
         var marker = L.marker([coordinatesArray[0],coordinatesArray[1]]);
+        var popupHTML = "<h1>" + data[i].title + "</h1>";
+        marker.bindPopup("popupHTML");
         marker.addTo(map);
-        var popupHTML = data[i].title;
-        marker.bindPopup(popupHTML);
       }
     });
