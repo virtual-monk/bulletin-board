@@ -20,7 +20,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    # @event.event_photo = params[:file]
+    @event.photo = params[:file]
     if @event.save
       flash[:notice] = "Event Saved"
       redirect_to event_path(@event)
@@ -36,7 +36,6 @@ class EventsController < ApplicationController
 
   def update
     access_to_event?(current_user)
-
     if @event.update(event_params)
       flash[:notice] = "Event Information Updated"
       redirect_to event_path
@@ -62,9 +61,6 @@ class EventsController < ApplicationController
     else
       @event = current_user.events.find(params[:id])
     end
-  end
-
-  def map
   end
 
   protected

@@ -7,7 +7,7 @@
       - @event.errors.full_messages.each do |message|
         %li= message
 .panel#dark-panel
-  = form_for @event do |f|
+  = form_for @event, html: { multipart: true } do |f|
     .row
       .large-7.columns
         .small-6.columns
@@ -57,7 +57,9 @@
       .large-7.columns
         .large-12.columns
           = f.text_area :details, placeholder: "Details"
-          = f.file_field :event_photo, type: :file
+          %div
+            = f.label :photo, 'Event photo'
+            = f.file_field :photo
     .row
       .large-7.columns
         .large-3.columns

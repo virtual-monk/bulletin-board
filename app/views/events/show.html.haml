@@ -1,10 +1,10 @@
+
 .row
   .columns
     .panel.white-text#dark-panel
       .row
         .large-4.columns
-          / -binding.pry
-          = image_tag @event.event_photo
+          = @event.photo_url.to_s
         .large-8.columns
           .row
             .medium-8.columns
@@ -33,7 +33,6 @@
                   , #{@event.state}
                 %div
                   = @event.zip_code
-
           .row
             .large-10.columns
               %div

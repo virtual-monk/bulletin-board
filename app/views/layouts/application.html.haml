@@ -16,10 +16,10 @@
         %h1
           %a{:href => "/"} Wassup?
     %section.top-bar-section
-      %ul.center
+      %ul
         %li= link_to 'featured', events_path
         %li= link_to 'calendar', calendar_path
-        %li= link_to 'map', events_path("events#map")
+        %li= link_to 'map', "/map"
     %section.top-bar-section
       %ul.right
         - if current_user

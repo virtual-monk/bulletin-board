@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  root to: "events#map"
-  # get '/event/maps'
-  get '/profile', to:'profile#show'
+  root to: "events#splash_screen"
+  get '/map', to:'events#map'
+  get '/profile', to:'events#profile'
   resources :profile
   resource :calendar, only: [:show], controller: :calendar
   devise_for :users
+  resources :map
   resources :events do
     resources :categories
     resources :attend

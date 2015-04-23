@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  mount_uploader :event_photo, EventPhotoUploader
+  mount_uploader :photo, PhotoUploader
   belongs_to :user
   belongs_to :category
   has_many :attends
