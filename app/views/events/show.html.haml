@@ -1,10 +1,9 @@
-
 .row
   .columns
     .panel.white-text#dark-panel
       .row
         .large-4.columns
-          = @event.photo_url.to_s
+          = image_tag @event.photo_url.to_s
         .large-8.columns
           .row
             .medium-8.columns

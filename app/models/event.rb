@@ -4,6 +4,8 @@ class Event < ActiveRecord::Base
   belongs_to :category
   has_many :attends
   has_many :maybe_attends
+  has_many :photo
+
 
   geocoded_by :full_street_address
 
