@@ -19,7 +19,7 @@ User.create(email:"robert.monk85@gmail.com", password: "qwerty12", admin: true)
 #
 #
 #
-Event.create(title: "Third Man Records Presents: ", details: "18+ $10 at the door",
+Event.create(title: "Third Man Records Presents: The Next Big Thing", details: "18+ $10 at the door",
   user_id: 1, category_id: 1, address: "33 Harrison Ave", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/06/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")

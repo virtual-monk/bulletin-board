@@ -22,17 +22,18 @@ $(function(){ $(document).foundation();
       attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
   }).addTo(map);
 
-  $.get( "/events.json", function( data ) {
-    showCoordinates = []
+  $.get( '/events.json', function( data ) {
+    showCoordinates = [];
     for (i=0; i<data.length; i++) {
       var coordinatesArray =  [data[i].latitude, data[i].longitude];
       var marker = L.marker([coordinatesArray[0],coordinatesArray[1]]);
       marker.addTo(map);
-      var popup = "<h1>" + data[i].title + "</h1>"
-      popup += "<h3>" + data[i].date + "</h3>"
-      popup += "<h3>" + data[i].start_time + "-" + data[i].end_time + "</h3>"
+      showCoordinates << marker
+      var popup = '<h1>' + data[i].title + '</h1>';
+      popup += '<h3>' + data[i].date + '</h3>';
+      popup += '<h3>' + data[i].start_time + '-' + data[i].end_time + '</h3>';
       marker.bindPopup(popup);
     }
-    map.fitBounds(showCoordinates)
+    map.fitBounds(showCoordinates);
   });
 });

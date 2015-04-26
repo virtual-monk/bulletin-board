@@ -1,5 +1,5 @@
 .top-bar {
-  background:rgba(31,138,150,0.95);
+  background: rgba(31, 138, 150, 0.95);
 }
 body {
   background-image:
@@ -15,7 +15,7 @@ label {
   color: white;
 }
 a {
-  color: black;
+  color: #000000;
 }
 a:hover{
   color: white;
@@ -24,12 +24,12 @@ a:hover{
   padding-left: 0;
   margin-right: auto;
   td {
-    color:white;
+    color: white;
     height: 100px;
     max-height: 100px;
     max-width: 150px;
     width: 150px;
-    background:rgba(31,138,150,0.95);
+    background:rgba(31, 138, 150, 0.95);
 
   }
 }
@@ -43,15 +43,15 @@ a:hover{
   height: 380px;
   max-height: 380px;
   max-width: 300px;
-  width: 300px;
   overflow-y: auto;
+  width: 300px;
 }
 .white-text {
   color: white;
 }
 #dark-panel {
   margin-top: 10px;
-  background:rgba(31,138,150,0.95);
+  background: rgba(31, 138, 150, 0.95);
   border-radius: 25px;
 }
 .scrollable {
