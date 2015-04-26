@@ -43,6 +43,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def profile
+    @attends = Attend.all.where(user_id: current_user)
+    @maybe_attends = MaybeAttend.all.where(user_id: current_user)
+  end
+
   def destroy
     access_to_event?(current_user)
     if @event.destroy

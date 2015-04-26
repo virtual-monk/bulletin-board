@@ -1,0 +1,46 @@
+.row
+  .large-12.columns
+    %h1.white-text.text-center#dark-panel
+      Attending
+      %ul
+        - @attends.each do |attend|
+          .large-4.columns
+            .panel.white-text.index-panel#dark-panel
+              .row
+                #photo_or_map
+                  -if attend.event.photo_url.to_s != ""
+                    = image_tag attend.event.photo_url.to_s
+                  -else
+                    = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{attend.event.latitude}%2C#{attend.event.longitude}"
+              .row
+                %h3
+                  .white-text
+                    = link_to attend.event.title, attend.event
+                = attend.event.category.category
+                .attend.event_date
+                  #{attend.event.date}
+                .attend.event_time
+                  = attend.event.start_time.strftime("%I:%M%p") + " - " + attend.event.end_time.strftime("%I:%M%p")
+.row
+  %h1.white-text.text-center#dark-panel
+    Maybe Attending
+    %ul
+      - @maybe_attends.each do |maybe_attend|
+        .large-4.columns
+          .panel.white-text.index-panel#dark-panel
+            .row
+              #photo_or_map
+                -if maybe_attend.event.photo_url.to_s != ""
+                  = image_tag maybe_attend.event.photo_url.to_s
+                -else
+                  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{maybe_attend.event.latitude}%2C#{maybe_attend.event.longitude}"
+            .row
+              %h3
+                .white-text
+                  = link_to maybe_attend.event.title, maybe_attend.event
+              = maybe_attend.event.category.category
+              .maybe_attend.event_date
+                #{maybe_attend.event.date}
+              .maybe_attend.event_time
+                = maybe_attend.event.start_time.strftime("%I:%M%p") + " - " + maybe_attend.event.end_time.strftime("%I:%M%p")
+

@@ -7,8 +7,8 @@
         .large-8.columns
           .row
             .medium-8.columns
-              %h3
-                .white-text
+              %h3.event#event_new_title
+                .white-text.event_editable#event_title
                   = @event.title
               = @event.category.category
             .medium-4.columns
@@ -21,7 +21,7 @@
                   #{@event.date}
                 .event_time
                   = @event.start_time.strftime("%I:%M%p") + " - " + @event.end_time.strftime("%I:%M%p")
-            .medium-4.columns.grey-text
+            .medium-4.columns.white-text
               .event_where.text-right
                 %div
                   #{@event.address}
@@ -34,8 +34,9 @@
                   = @event.zip_code
           .row
             .large-10.columns
-              %div
-                Details: #{@event.details}
+              Details:
+              %div.event_editable#event_details
+                #{@event.details}
       .row
         .columns
           .rows
@@ -51,10 +52,13 @@
                 - else
                   = "#{@event.maybe_attends_count} people might be going to this event"
               - if current_user
-                = link_to "Attending", event_attend_index_path(@event), method: :post
-                = link_to "Maybe Attending", event_maybe_attend_index_path(@event), method: :post
-                - if @event.owner_or_admin?(current_user)
-                  %div
-                  = link_to "Edit event", edit_event_path(@event)
-                  %div
-                  = link_to "Delete event", event_path(@event), method: :delete
+                .button.tiny
+                  = link_to "Attending", event_attend_index_path(@event), method: :post
+                .button.tiny
+                  = link_to "Maybe", event_maybe_attend_index_path(@event), method: :post
+                .row
+                  - if @event.owner_or_admin?(current_user)
+                    %div.button.tiny
+                      = link_to "Edit event", edit_event_path(@event), class: "edit_event"
+                    %div.button.tiny
+                      = link_to "Delete event", event_path(@event), method: :delete

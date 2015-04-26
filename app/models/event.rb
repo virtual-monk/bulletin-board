@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many :attends
+  has_many :users, through: :attends
   has_many :maybe_attends
   has_many :photo
 

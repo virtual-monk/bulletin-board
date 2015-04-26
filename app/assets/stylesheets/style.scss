@@ -16,7 +16,6 @@ label {
 }
 a {
   color: black;
-    background:rgba(31,138,150,0.95);
 }
 a:hover{
   color: white;
@@ -34,6 +33,12 @@ a:hover{
 
   }
 }
+.button{
+  background-color: orange;
+}
+#my-events{
+  color: orange;
+}
 .index-panel {
   height: 380px;
   max-height: 380px;
@@ -45,7 +50,9 @@ a:hover{
   color: white;
 }
 #dark-panel {
+  margin-top: 10px;
   background:rgba(31,138,150,0.95);
+  border-radius: 25px;
 }
 .scrollable {
   height: 80px;
@@ -61,7 +68,7 @@ a:hover{
 #map {
   background-color: #000000;
   display: block;
-  height: 600px;
+  height: 90%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
