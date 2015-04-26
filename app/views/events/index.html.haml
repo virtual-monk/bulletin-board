@@ -5,8 +5,11 @@
         .large-4.columns
           .panel.white-text.index-panel#dark-panel
             .row
-              #mini_map
-                = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{event.latitude}%2C#{event.longitude}"
+              #photo_or_map
+                -if event.photo_url.to_s != ""
+                  = image_tag event.photo_url.to_s
+                -else
+                  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{event.latitude}%2C#{event.longitude}"
             .row
               %h3
                 .white-text

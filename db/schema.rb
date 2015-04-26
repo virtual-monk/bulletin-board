@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20150417173137) do
     t.float    "longitude"
     t.integer  "attends_count",       default: 0
     t.integer  "maybe_attends_count", default: 0
-    t.string   "event_photo"
+    t.string   "photo"
   end
 
   create_table "maybe_attends", force: :cascade do |t|

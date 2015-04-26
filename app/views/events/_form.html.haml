@@ -57,7 +57,9 @@
       .large-7.columns
         .large-12.columns
           = f.text_area :details, placeholder: "Details"
-          = f.file_field :event_photo, type: :file
+          %div
+            = f.label :photo, 'Event photo'
+            = f.file_field :photo
     .row
       .large-7.columns
         .large-3.columns

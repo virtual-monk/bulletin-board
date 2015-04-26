@@ -1,9 +1,12 @@
 class Event < ActiveRecord::Base
-  mount_uploader :event_photo, EventPhotoUploader
+  mount_uploader :photo, PhotoUploader
   belongs_to :user
   belongs_to :category
   has_many :attends
+  has_many :users, through: :attends
   has_many :maybe_attends
+  has_many :photo
+
 
   geocoded_by :full_street_address
 

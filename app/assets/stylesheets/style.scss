@@ -1,5 +1,5 @@
 .top-bar {
-  background:rgba(35,56,63,0.95);
+  background: rgba(31, 138, 150, 0.95);
 }
 body {
   background-image:
@@ -14,27 +14,45 @@ body {
 label {
   color: white;
 }
+a {
+  color: #000000;
+}
+a:hover{
+  color: white;
+}
 .calendar {
   padding-left: 0;
   margin-right: auto;
   td {
-    color:white;
+    color: white;
     height: 100px;
     max-height: 100px;
     max-width: 150px;
     width: 150px;
-    background:rgba(35,56,63,0.95);
+    background:rgba(31, 138, 150, 0.95);
 
   }
+}
+.button{
+  background-color: orange;
+}
+#my-events{
+  color: orange;
+}
+.index-panel {
+  height: 380px;
+  max-height: 380px;
+  max-width: 300px;
+  overflow-y: auto;
+  width: 300px;
 }
 .white-text {
   color: white;
 }
 #dark-panel {
-  background:rgba(31,138,150,0.95);
-  .index-panel {
-    overflow-y: auto;
-  }
+  margin-top: 10px;
+  background: rgba(31, 138, 150, 0.95);
+  border-radius: 25px;
 }
 .scrollable {
   height: 80px;
@@ -50,7 +68,7 @@ label {
 #map {
   background-color: #000000;
   display: block;
-  height: 600px;
+  height: 90%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;

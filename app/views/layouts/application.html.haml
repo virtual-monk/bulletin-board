@@ -16,19 +16,19 @@
         %h1
           %a{:href => "/"} Wassup?
     %section.top-bar-section
-      %ul.center
-        %li= link_to 'featured', events_path
-        %li= link_to 'calendar', calendar_path
-        %li= link_to 'map', events_path("events#map")
+      %ul
+        %li= link_to 'featured', events_path, class: "radius button tiny edit_button"
+        %li= link_to 'calendar', calendar_path, class: "radius button tiny edit_button"
+        %li= link_to 'map', '/map',class: "radius button tiny edit_button"
     %section.top-bar-section
       %ul.right
         - if current_user
-          / %li
-          /   %a.button.large{"data-reveal-id" => "myCform", :href => "#"} Add Event
-          /   #myCform.reveal-modal.small{"data-reveal" => ""}/
-          /   %a.close-reveal-modal ×
-          / %li= link_to 'My Events',
-          %li= link_to 'Add Event', new_event_path
+          %li
+            %a.button.large{"data-reveal-id" => "myCform", href: "#"} Add Event
+            #myCform.reveal-modal.small{"data-reveal" => ""}/
+            %a.close-reveal-modal ×
+          %li= link_to 'My Events', '/profile', class: "radius button tiny edit_button"
+          / %li= link_to 'Add Event', new_event_path
           %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
         - else
           %li= link_to 'Sign Up', new_user_registration_path

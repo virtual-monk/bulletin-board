@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :map]
-
   def show
     @event = Event.find(params[:id])
   end
@@ -20,7 +19,6 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    # @event.event_photo = params[:file]
     if @event.save
       flash[:notice] = "Event Saved"
       redirect_to event_path(@event)
@@ -36,7 +34,6 @@ class EventsController < ApplicationController
 
   def update
     access_to_event?(current_user)
-
     if @event.update(event_params)
       flash[:notice] = "Event Information Updated"
       redirect_to event_path
@@ -44,6 +41,11 @@ class EventsController < ApplicationController
       flash[:notice] = "Invalid Event Submission"
       render :edit
     end
+  end
+
+  def profile
+    @attends = Attend.all.where(user_id: current_user)
+    @maybe_attends = MaybeAttend.all.where(user_id: current_user)
   end
 
   def destroy
@@ -64,13 +66,10 @@ class EventsController < ApplicationController
     end
   end
 
-  def map
-  end
-
   protected
   def event_params
     params.require(:event).permit(:title, :start_time, :end_time, :date,
       :details, :category_id, :address, :address_2, :city, :state, :zip_code,
-      :longitude, :latitude, :event_photo)
+      :longitude, :latitude, :photo)
   end
 end
