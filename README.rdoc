@@ -14,7 +14,6 @@ Geocoder gem provided the location queries for the event markers.
 [https://www.mapbox.com/developers/api/]
 [https://github.com/alexreisner/geocoder]
 
-
 ### Front end
 
 The front end of the app was structured using haml with foundation and
