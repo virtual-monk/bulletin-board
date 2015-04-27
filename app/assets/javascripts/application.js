@@ -23,17 +23,16 @@ $(function(){ $(document).foundation();
   }).addTo(map);
 
   $.get( '/events.json', function( data ) {
-    showCoordinates = [];
     for (i=0; i<data.length; i++) {
       var coordinatesArray =  [data[i].latitude, data[i].longitude];
       var marker = L.marker([coordinatesArray[0],coordinatesArray[1]]);
       marker.addTo(map);
-      showCoordinates << marker
-      var popup = '<h1>' + data[i].title + '</h1>';
-      popup += '<h3>' + data[i].date + '</h3>';
-      popup += '<h3>' + data[i].start_time + '-' + data[i].end_time + '</h3>';
+      var popup = '<div >'
+      popup += '<h1><a id="modalTitle" href="/events/' + data[i].id + '">' + data[i].title + '</a></h1>'
+      popup += '<p class="lead"><img src="' + data[i].photo["url"] + '" style="width: 40%"></p>'
+      popup += '<p>' + data[i].details + '</p>'
+      popup += '</div>'
       marker.bindPopup(popup);
     }
-    map.fitBounds(showCoordinates);
   });
 });

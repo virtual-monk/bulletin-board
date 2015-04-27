@@ -1,24 +1,37 @@
-.top-bar {
-  background: rgba(31, 138, 150, 0.95);
+.button{
+  background-color: rgba(0, 91, 90, 1);
+}
+nav.top-bar {
+  background-color: rgba(0, 91, 90, 1);
+}
+#this{
+  background-color: rgba(0, 91, 90, 1);
+  margin-top: 0;
 }
 body {
   background-image:
-  url("http://cdn.pigeonsandplanes.com/wp-content/uploads/2015/02/concert-crowd-at-live-music-festival-m.jpg");
+  url("http://hdwallpapers-download.com/wp-content/uploads/2014/10/Bubble-Wallpaper-56.jpg");
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-.grey-text{
-  color: grey;
 }
 label {
   color: white;
 }
 a {
   color: #000000;
+  font-family: Futura,"Trebuchet MS",Arial,sans-serif;
 }
 a:hover{
   color: white;
+}
+#sup {
+  color: white;
+  font-size: 20px;
+}
+#sup:hover{
+  color: rgba(217, 50, 64, 1);
+  font-size: 20px;
 }
 .calendar {
   padding-left: 0;
@@ -29,13 +42,15 @@ a:hover{
     max-height: 100px;
     max-width: 150px;
     width: 150px;
-    background:rgba(31, 138, 150, 0.95);
+    background: rgba(0, 171, 153, 0.95);
 
   }
 }
-.button{
-  background-color: orange;
+.alert, .notice{
+  font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+  color: white;
 }
+
 #my-events{
   color: orange;
 }
@@ -45,13 +60,14 @@ a:hover{
   max-width: 300px;
   overflow-y: auto;
   width: 300px;
+  font-family: Futura,"Trebuchet MS",Arial,sans-serif;
 }
 .white-text {
   color: white;
 }
 #dark-panel {
   margin-top: 10px;
-  background: rgba(31, 138, 150, 0.95);
+  background: rgba(0, 171, 153, 0.95);
   border-radius: 25px;
 }
 .scrollable {
@@ -60,6 +76,7 @@ a:hover{
   max-width: 140px;
   overflow-y: auto;
   width: 140px;
+  font-family: Futura,"Trebuchet MS",Arial,sans-serif
 }
 #event_show {
   margin-top: 50px;
@@ -68,9 +85,12 @@ a:hover{
 #map {
   background-color: #000000;
   display: block;
-  height: 90%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
   width: 100%;
+  margin-top: 0;
+}
+#image{
+  width: auto;
 }

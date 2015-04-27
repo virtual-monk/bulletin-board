@@ -6,7 +6,7 @@
           = link_to calendar_path(date: @date - 1.month), class: "button tiny right" do
             %i
         .small-4.columns
-          %h2
+          %h2.white-text
             = "#{@date.strftime("%B")} #{@date.year}"
         .small-1.columns
           = link_to calendar_path(date: @date + 1.month), class: "button tiny left" do

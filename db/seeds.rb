@@ -14,11 +14,7 @@ Category.create(category: "Comedy Show")
 Category.create(category: "Family/kids")
 
 User.create(email:"robert.monk85@gmail.com", password: "qwerty12", admin: true)
-# #
-#
-#
-#
-#
+
 Event.create(title: "Third Man Records Presents: The Next Big Thing", details: "18+ $10 at the door",
   user_id: 1, category_id: 1, address: "33 Harrison Ave", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/06/2015", "%m/%d/%Y"), start_time: "18:00:00",
@@ -55,15 +51,10 @@ Event.create(title: "King Lear", details: "Boston College presents King Lear",
   user_id: 1, category_id: 2, address: "44 Charles St", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/13/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")
-# Event.create(title: "Evil Dead: the musical: the play", details: "The coming to
-#   age story of young Ash overcoming adversity", user_id: 1, category_id: 2,
-#   address: "10 Bosworth St", city: "Boston", state: "MA", zip_code: "02134",
-#   date: Date.strptime("04/06/2015", "%m/%d/%Y"), start_time: "18:00:00",
-#   end_time: "20:00:00")
 
 Event.create(title: "Boston Indie Movie Festival", details: "Come support your
   local film makers at the showcase",
-  user_id: 3, category_id: 3, address: "60 Harrison Ave", city: "Boston",
+  user_id: 3, category_id: 3, address: "80 Harrison Ave", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/20/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")
 Event.create(title: "LGBT Movie Festival", details: "Come support your

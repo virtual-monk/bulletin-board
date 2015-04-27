@@ -1,12 +1,12 @@
 !!!
-%html{:lang => "en"}
+%html{lang: "en"}
   %head
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-    %meta{:content => "initial-scale=1,maximum-scale=1,user-scalable=no", :name => "viewport"}/
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+    %meta{content: "initial-scale=1,maximum-scale=1,user-scalable=no", name: "viewport"}/
     %title= "Wassup?"
-    %link{:href => "https://api.tiles.mapbox.com/mapbox.js/v2.1.8/mapbox.css", :rel => "stylesheet"}
-    %link{:href => "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css", :rel => "stylesheet"}
+    %link{href: "https://api.tiles.mapbox.com/mapbox.js/v2.1.8/mapbox.css", rel: "stylesheet"}
+    %link{href: "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css", rel: "stylesheet"}
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
@@ -14,30 +14,26 @@
     %ul.title-area
       %li.name
         %h1
-          %a{:href => "/"} Wassup?
-    %section.top-bar-section
+          %a{href: "/", id: "sup"} Wassup?
+    %section.top-bar-section#this
       %ul
-        %li= link_to 'featured', events_path, class: "radius button tiny edit_button"
-        %li= link_to 'calendar', calendar_path, class: "radius button tiny edit_button"
-        %li= link_to 'map', '/map',class: "radius button tiny edit_button"
+        %li= link_to 'featured', events_path, class: "radius button large "
+        %li= link_to 'calendar', calendar_path, class: "radius button tiny "
+        %li= link_to 'map', '/map',class: "radius button tiny "
     %section.top-bar-section
       %ul.right
         - if current_user
-          %li
-            %a.button.large{"data-reveal-id" => "myCform", href: "#"} Add Event
-            #myCform.reveal-modal.small{"data-reveal" => ""}/
-            %a.close-reveal-modal ×
-          %li= link_to 'My Events', '/profile', class: "radius button tiny edit_button"
-          / %li= link_to 'Add Event', new_event_path
-          %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
+          %li= link_to 'My Events', '/profile', class: "radius button tiny nav-buttons"
+          %li= link_to 'Add Event', new_event_path, class: "radius button tiny "
+          %li= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "radius button tiny "
         - else
-          %li= link_to 'Sign Up', new_user_registration_path
-          %li= link_to 'Sign In', new_user_session_path
+          %li= link_to 'Sign Up', new_user_registration_path, class: "radius button tiny "
+          %li= link_to 'Sign In', new_user_session_path, class: "radius button tiny "
   %p.notice= notice
   %p.alert= alert
   %body
     = yield
 
-    %script{:src => "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"}
-    %script{:src => "https://api.tiles.mapbox.com/mapbox.js/v2.1.8/mapbox.js"}
+    %script{src: "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"}
+    %script{src: "https://api.tiles.mapbox.com/mapbox.js/v2.1.8/mapbox.js"}
     = javascript_include_tag "application"

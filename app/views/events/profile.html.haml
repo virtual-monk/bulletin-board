@@ -4,7 +4,7 @@
       Attending
       %ul
         - @attends.each do |attend|
-          .large-4.columns
+          .large-4.columns.left
             .panel.white-text.index-panel#dark-panel
               .row
                 #photo_or_map
@@ -26,7 +26,7 @@
     Maybe Attending
     %ul
       - @maybe_attends.each do |maybe_attend|
-        .large-4.columns
+        .large-4.columns.left
           .panel.white-text.index-panel#dark-panel
             .row
               #photo_or_map
@@ -43,4 +43,26 @@
                 #{maybe_attend.event.date}
               .maybe_attend.event_time
                 = maybe_attend.event.start_time.strftime("%I:%M%p") + " - " + maybe_attend.event.end_time.strftime("%I:%M%p")
+.row
+  %h1.white-text.text-center#dark-panel
+    Added Events
+    %ul
+      - @events.each do |event|
+        .large-4.columns.left
+          .panel.white-text.index-panel#dark-panel
+            .row
+              #photo_or_map
+                -if event.photo_url.to_s != ""
+                  = image_tag event.photo_url.to_s
+                -else
+                  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{event.latitude}%2C#{event.longitude}"
+            .row
+              %h3
+                .white-text
+                  = link_to event.title, event
+              = event.category.category
+              .event.event_date
+                #{event.date}
+              .event.event_time
+                = event.start_time.strftime("%I:%M%p") + " - " + event.end_time.strftime("%I:%M%p")
 

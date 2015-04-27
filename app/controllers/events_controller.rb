@@ -46,6 +46,7 @@ class EventsController < ApplicationController
   def profile
     @attends = Attend.all.where(user_id: current_user)
     @maybe_attends = MaybeAttend.all.where(user_id: current_user)
+    @events = Event.all.where(user_id: current_user)
   end
 
   def destroy
