@@ -3,7 +3,6 @@ ruby "2.1.5"
 
 gem 'devise'
 gem 'rails', '4.2.1'
-gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -18,7 +17,11 @@ gem "carrierwave"
 gem 'mini_magick', '~> 4.2.1'
 gem 'fog'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'rails_12factor', group: :production
+
+group :production, :staging do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem "rails-erd"
