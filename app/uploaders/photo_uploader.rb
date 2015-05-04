@@ -3,13 +3,9 @@
 class PhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  process :resize_to_fit => [200, 200]
+  process resize_to_fit: [250, 250]
 
-  if Rails.env.production?
-    storage :fog
-  else
-    storage :file
-  end
+  storage :fog
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"

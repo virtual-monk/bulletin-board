@@ -13,8 +13,6 @@ Category.create(category: "Visual Arts")
 Category.create(category: "Comedy Show")
 Category.create(category: "Family/kids")
 
-User.create(email:"robert.monk85@gmail.com", password: "qwerty12", admin: true)
-
 Event.create(title: "Third Man Records Presents: The Next Big Thing", details: "18+ $10 at the door",
   user_id: 1, category_id: 1, address: "33 Harrison Ave", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/06/2015", "%m/%d/%Y"), start_time: "18:00:00",
@@ -29,7 +27,7 @@ Event.create(title: "The Boston Underground", details: "Punk/funk and everything
   state: "MA", zip_code: "02134", date: Date.strptime("04/28/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")
 Event.create(title: "The Kinks", details: "21+ $24 at the door",
-  user_id: 4, category_id: 1, address: "559 Washington St", city: "Boston",
+  user_id: 1, category_id: 1, address: "559 Washington St", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/28/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")
 Event.create(title: "The Zombie Toxic Event", details: "18+ $10 at the door",
@@ -39,7 +37,7 @@ Event.create(title: "The Zombie Toxic Event", details: "18+ $10 at the door",
 
 Event.create(title: "Avenue Q", details: "The greatest musical you'd ever want
   to see",
-  user_id: 2, category_id: 2, address: "667 E Broadway", city: "Boston",
+  user_id: 1, category_id: 2, address: "667 E Broadway", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/10/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")
 Event.create(title: "The Book of Mormon", details: "Even better than the
@@ -54,31 +52,31 @@ Event.create(title: "King Lear", details: "Boston College presents King Lear",
 
 Event.create(title: "Boston Indie Movie Festival", details: "Come support your
   local film makers at the showcase",
-  user_id: 3, category_id: 3, address: "80 Harrison Ave", city: "Boston",
+  user_id: 1, category_id: 3, address: "80 Harrison Ave", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/20/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")
 Event.create(title: "LGBT Movie Festival", details: "Come support your
   local film makers at the showcase",
-  user_id: 3, category_id: 3, address: "69 Bromfield St", city: "Boston",
+  user_id: 1, category_id: 3, address: "69 Bromfield St", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/26/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")
 Event.create(title: "Oscar Nominated Animated Shorts", details: "See this years
   Oscar Nominated Animated shorts",
-  user_id: 3, category_id: 3, address: "21 Beacon St", city: "Boston",
+  user_id: 1, category_id: 3, address: "21 Beacon St", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/18/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")
 
 Event.create(title: "Art show", details: "Showcasing the works of Art Artstofolous",
-  user_id: 4, category_id: 4, address: "450 Harrison Ave", city: "Boston",
+  user_id: 1, category_id: 4, address: "450 Harrison Ave", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/25/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")
 Event.create(title: "Drink & Paint", details: "You bring the drinks, we'll bring the paints",
-  user_id: 4, category_id: 4, address: "242 E Berkeley St", city: "Boston",
+  user_id: 1, category_id: 4, address: "242 E Berkeley St", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/19/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")
 Event.create(title: "Society's Edge", details: "Installation works by a group
   only known by Society's Edge",
-  user_id: 4, category_id: 4, address: "100 West Second St", city: "Boston",
+  user_id: 1, category_id: 4, address: "100 West Second St", city: "Boston",
   state: "MA", zip_code: "02134", date: Date.strptime("04/04/2015", "%m/%d/%Y"), start_time: "18:00:00",
   end_time: "20:00:00")
 
