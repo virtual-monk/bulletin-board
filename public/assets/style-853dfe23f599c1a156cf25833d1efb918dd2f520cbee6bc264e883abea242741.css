@@ -1,0 +1,125 @@
+/* line 1, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+.button {
+  background-color: #005b5a;
+}
+
+/* line 4, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+nav.top-bar {
+  background-color: #005b5a;
+}
+
+/* line 7, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+body {
+  background-image: url("http://hdwallpapers-download.com/wp-content/uploads/2014/10/Bubble-Wallpaper-56.jpg");
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* line 14, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+label {
+  color: white;
+}
+
+/* line 17, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+a {
+  color: #000000;
+  font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+}
+
+/* line 21, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+a:hover {
+  color: white;
+}
+
+/* line 24, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+#sup {
+  color: white;
+  font-size: 20px;
+}
+
+/* line 28, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+#sup:hover {
+  color: #d93240;
+  font-size: 20px;
+}
+
+/* line 32, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+.calendar {
+  padding-left: 0;
+  margin-right: auto;
+}
+/* line 35, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+.calendar td {
+  color: white;
+  height: 100px;
+  max-height: 100px;
+  max-width: 150px;
+  width: 150px;
+  background: rgba(0, 171, 153, 0.95);
+}
+
+/* line 45, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+.alert, .notice {
+  font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+  color: white;
+}
+
+/* line 49, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+#my-events {
+  color: orange;
+}
+
+/* line 52, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+.index-panel {
+  height: 380px;
+  max-height: 380px;
+  max-width: 300px;
+  overflow-y: auto;
+  width: 300px;
+  font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+}
+
+/* line 60, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+.white-text {
+  color: white;
+}
+
+/* line 63, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+#dark-panel {
+  margin-top: 10px;
+  background: rgba(0, 171, 153, 0.95);
+  border-radius: 25px;
+}
+
+/* line 68, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+.scrollable {
+  height: 80px;
+  max-height: 80px;
+  max-width: 140px;
+  overflow-y: auto;
+  width: 140px;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+/* line 76, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+#event_show {
+  margin-top: 50px;
+  margin-top: 10px;
+}
+
+/* line 80, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+#map {
+  background-color: #000000;
+  display: block;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-top: 0;
+}
+
+/* line 89, /Users/rmonkjr/challenges/bulletin_board/app/assets/stylesheets/style.scss.erb */
+#image {
+  width: auto;
+}

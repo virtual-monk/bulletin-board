@@ -3,14 +3,14 @@
     .row
       .small-12.comlumns.text-center.small-offset-3.column
         .small-1.columns
-          = link_to calendar_path(date: @date - 1.month), class: "button tiny right" do
-            %i
+          Last Month
+          / = link_to calendar_path(date: @date - 1.month), class: "button tiny right"
         .small-4.columns
           %h2.white-text
             = "#{@date.strftime("%B")} #{@date.year}"
         .small-1.columns
-          = link_to calendar_path(date: @date + 1.month), class: "button tiny left" do
-            %i
+          Next Month
+          / = link_to calendar_path(date: @date + 1.month), class: "button tiny left"
         .small-offset-3.column
     .medium-12.columns.medium-offset-1.column
       .medium-8.columns
