@@ -1,4 +1,6 @@
 
+http://localevents.herokuapp.com/
+
 Synopsis
 
 An app designed to allow users to post events that are going on in

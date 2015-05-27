@@ -1,11 +1,11 @@
 !!!
 %html{lang: "en"}
   %head
+    %title= "Wassup?"
     %meta{charset: "utf-8"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
     %meta{content: "initial-scale=1,maximum-scale=1,user-scalable=no", name: "viewport"}/
     %link{:href => "images/icons/1-favicon.ico", :rel => "shortcut icon", :type => "image/ico"}
-    %title= "Wassup?"
     %link{href: "https://api.tiles.mapbox.com/mapbox.js/v2.1.8/mapbox.css", rel: "stylesheet"}
     %link{href: "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css", rel: "stylesheet"}
     = stylesheet_link_tag    "application"
@@ -35,6 +35,5 @@
   %body
     = yield
 
-    %script{src: "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"}
-    %script{src: "https://api.tiles.mapbox.com/mapbox.js/v2.1.8/mapbox.js"}
+    %script{src: "/assets/javascripts/form_event.js"}
     = javascript_include_tag "application"
